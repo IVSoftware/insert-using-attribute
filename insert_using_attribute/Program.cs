@@ -18,16 +18,16 @@ namespace insert_using_attribute
 			Console.WriteLine(xFruit.ToString());
 		}
         const string source =
-		@"<Fruits>
-			<node text=""Apple"" tag=""a"" imageindex=""0"">
-				<node text = ""Store"" tag=""b"" imageindex=""1"" />
-				<node text = ""City"" tag=""c"" imageindex=""2"" />
-			</node>
-			<node text = ""Orange"" tag=""a"" imageindex=""0"">
-				<node text = ""Store"" tag=""b"" imageindex=""1"" />
-				<node text = ""City"" tag=""c"" imageindex=""2"" />
-			</node>
-		</Fruits>";
+@"<Fruits>
+	<node text=""Apple"" tag=""a"" imageindex=""0"">
+		<node text = ""Store"" tag=""b"" imageindex=""1"" />
+		<node text = ""City"" tag=""c"" imageindex=""2"" />
+	</node>
+	<node text = ""Orange"" tag=""a"" imageindex=""0"">
+		<node text = ""Store"" tag=""b"" imageindex=""1"" />
+		<node text = ""City"" tag=""c"" imageindex=""2"" />
+	</node>
+</Fruits>";
     }
 	static class Extensions
 	{
@@ -49,7 +49,9 @@ namespace insert_using_attribute
 				return true;
 			}
 		}
-		public static XElement FindPath(this XElement xRoot,string path)
+		public static XElement FindPath(
+			this XElement xRoot,
+			string path)
 		{
 			XElement xTraverse = xRoot;
 			string[] split = path.Split('\\');
